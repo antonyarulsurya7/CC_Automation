@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="row">
+		<table class="table table-hover table-responsive">
+		    <thead>
+		        <tr>
+		            <th>Tournement Name</th>
+                    <th>Team Members</th>
+                   
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let team of teams ">
+                    <th>{{ team.tournament_name }}</th>
+                    <th>{{ team.name }}</th>
+                    
+                    <th><button type="button"(click)="delete_button(team.id)" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></th>
+                   
+
+                </tr>
+                <tr *ngIf="new_row">
+                    <th><input type="text" placeholder="Tournament Name" #name></th>
+                    <th style="background-color: black;"><mat-form-field appearance="fill">
+                        <mat-label>Players</mat-label>
+                        <mat-select [formControl]="team_selection" #email multiple>
+                          <mat-select-trigger>
+                            {{team_selection.value ? team_selection.value[0].name : ''}}
+                            <span *ngIf="team_selection.value?.length > 1" class="example-additional-selection">
+                              (+{{team_selection.value.length - 1}} {{team_selection.value?.length === 2 ? 'other' : 'others'}})
+                            </span>
+                          </mat-select-trigger>
+                          <mat-option *ngFor="let member of members" [value]="member">{{member.name}}</mat-option>
+                        </mat-select>
+                      </mat-form-field></th>
+                    <th><button type="button" (click)="added_button(name.value,email.value)" data-uid="1" class="add btn btn-warning btn-sm"><span class="glyphicon glyphicon-plus"></span></button></th>
+
+                </tr>
+            </tbody>
+           
+        </table>
+        <div *ngIf="add" class="add-row"><button class="add-btn" (click)="add_button()" >Add</button></div>
+    </div>
+  </div>

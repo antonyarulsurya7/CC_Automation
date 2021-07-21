@@ -1,0 +1,30 @@
+
+<div class="row">
+    
+    <div class="column1">
+        <ul>
+            
+            <li><button class="btn" (click)="assignComp('booked')">Ground Booked</button></li>
+            <li><button class="btn" (click)="assignComp('request')">Ground Booking Request</button></li>
+            <li><button class="btn" (click)="assignComp('availablity')">Ground Avalablity</button></li>
+        </ul>
+    </div>
+    <div class="column2" >
+       
+        <div *ngIf="booked">
+            <div> 
+              <ng-container *ngComponentOutlet="groundbookComponent"></ng-container>
+            </div>
+          </div>
+          <div *ngIf="request">
+            <div> 
+              <ng-container *ngComponentOutlet="groundrequestComponent"></ng-container>
+            </div>
+          </div>
+          <div *ngIf="availablity">
+            <div> 
+              <ng-container *ngComponentOutlet="groundavailablityComponent"></ng-container>
+            </div>
+          </div>
+    </div>
+</div>

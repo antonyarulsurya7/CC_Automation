@@ -1,0 +1,11 @@
+.notice{
+    height: 400px;
+    width: 300px;
+    background-color: white;
+    box-shadow: black;
+    
+}
+.notice-align{
+    padding-right: 400px;
+    padding-bottom: 140px;
+}

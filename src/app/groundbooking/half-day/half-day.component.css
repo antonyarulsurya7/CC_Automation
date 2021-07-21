@@ -1,0 +1,125 @@
+.main{
+    
+    padding-left: 230px;
+    padding-top: 100px;
+}
+
+h1{
+	position: relative;
+	right: 180px;
+}
+
+
+.event, .from , .email {
+	float: left;
+	width: 570px;
+	min-width: 280px;
+	height: 49px;
+	background-color: transparent;
+	border: 1px solid #fff;
+	padding: 0px 15px;
+	color: #fff;
+	outline: none;
+	font-size: 14px;
+	letter-spacing: 0.5px;
+	margin-bottom: 30px;
+	
+}
+
+#search-section fieldset {
+	display: inline-block;
+}
+ #search-section {
+	position: relative;
+    
+}
+ #search-section input.searchText {
+	float: left;
+	width: 570px;
+	min-width: 280px;
+	height: 49px;
+	background-color: transparent;
+	border: 1px solid #fff;
+	padding: 0px 15px;
+	color: #fff;
+	outline: none;
+	font-size: 14px;
+	letter-spacing: 0.5px;
+	margin-bottom: 30px;
+}
+
+ #search-section input.main-button {
+	position: absolute;
+	top: 230px;
+	right: 200px;
+	outline: none;
+	cursor: pointer;
+	display: inline-block;
+	height: 50px;
+	line-height: 50px;
+	padding: 0px 20px;
+	border: none;
+	margin-left: 10px;
+	background-color: #00bcd4;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	transition: all 0.5s;
+	margin-bottom: 30px;
+}
+ #search-section button:hover {
+	background-color: #00a4b9;
+}
+
+#search-section span {
+	color: #fff;
+	font-size: 15px;
+	font-weight: 700;
+	margin-left: 8px;
+}
+#search-section em {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	color: #fff;
+}
+#search-section ::-webkit-input-placeholder { /* Edge */
+  color: #fff;
+}
+
+#search-section :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #fff;
+}
+
+#search-section ::placeholder {
+  color: #fff;
+}
+
+
+/* Responsive Style */
+@media (max-width: 1200px) {
+	.banner #search-section input.main-button {
+		position: absolute;
+		top: 75px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	 #search-section input.searchText {
+		float: none;
+		width: 100%;
+	}
+
+}
+@media (max-width: 991px) {
+
+     #search-section fieldset button {
+		margin-top: 0px;
+	}
+	 #search-section fieldset input {
+		width: 100%;
+		min-width: 280px;
+		margin-bottom: 30px;
+	}
+}

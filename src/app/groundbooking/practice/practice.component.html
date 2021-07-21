@@ -1,0 +1,19 @@
+<div class="main">
+    <div class="ground_booking" id="search-section">
+        <form id="suggestion_form" name="gs" method="POST">
+            <div class="searchText">
+
+                <h1>Practice Booking</h1>
+                <h3 style="color: white;">{{ message }}</h3>
+             <input type="email" name="email" class="email" value="{{ Email }}" #email placeholder="Email" disabled autocomplete="on">
+
+            <input type="text" name="fromevent" class="event" #event placeholder="Event" autocomplete="on">
+                <input type="Date" name="from" class="from" #from autocomplete="on">
+             <input type="Date" name="to" class="to" #to autocomplete="on">
+            </div>
+            <input type="submit" name="results" class="main-button" (click)="practice('practice', from.value, to.value, email.value, event.value )" value="Book Now">
+        </form>
+        <div class="advSearch_chkbox">
+        </div>
+    </div>
+</div>

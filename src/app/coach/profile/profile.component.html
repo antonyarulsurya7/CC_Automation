@@ -1,0 +1,83 @@
+<div class="column1" *ngIf="display">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th colspan="4">{{ coach.name | titlecase }} &nbsp; Profile</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"></th>
+          <td colspan="2">Email</td>
+          
+          <td>{{ coach.email }}</td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td colspan="2">Coach Type</td>
+          
+          <td>{{ coach.coachtype | uppercase }}</td>
+        </tr>
+        <tr>
+            <th scope="row"></th>
+            <td colspan="2">Age</td>
+            <td>{{ coach.age }}</td>
+          </tr>
+        <tr>
+          <th scope="row"></th>
+          <td colspan="2">Mobile Number </td>
+          <td>{{ coach.mobile_number }}</td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="btn" (click)="edit_button()">Edit</button>
+  </div>
+
+  <div class="column1" *ngIf="edit">
+    <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th colspan="4">{{ coach.name | titlecase }} &nbsp; Profile</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <th scope="row"></th>
+            <td colspan="2">Name</td>
+            
+            <td><input  type="text" value="{{ coach.name }}" class="form-control" #name  placeholder="Name"></td>
+          </tr>
+        <tr>
+          <th scope="row"></th>
+          <td colspan="2">Email</td>
+          
+          <td><input  type="text" value="{{ coach.email }}" class="form-control" #email  placeholder="Email"></td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td colspan="2">Coach Type</td>
+          
+          <td><input type="text" value="{{ coach.coachtype | uppercase }}" class="form-control" #coachtype  placeholder="Coach Type"></td>
+        </tr>
+        <tr>
+            <th scope="row"></th>
+            <td colspan="2">Age</td>
+            <td><input type="text" value="{{ coach.age }}" class="form-control" #age  placeholder="Age"></td>
+          </tr>
+        <tr>
+          <th scope="row"></th>
+          <td colspan="2">Mobile Number </td>
+          <td><input type="text" value="{{ coach.mobile_number }}" class="form-control" #mobile  placeholder="Mobile Number"></td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="btn" (click)="edit_coach(coach.cid,name.value, email.value, coachtype.value, age.value, mobile.value)">Edit</button>
+  </div>

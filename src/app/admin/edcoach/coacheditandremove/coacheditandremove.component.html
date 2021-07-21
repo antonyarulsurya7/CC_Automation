@@ -1,0 +1,49 @@
+
+
+<div class="container">
+	<div class="row">
+		<table class="table table-hover table-responsive">
+		    <thead>
+		        <tr>
+		            <th>Name</th>
+		            <th>Email</th>
+		            <th>Age</th>
+                    <th>Coach Type</th>
+		            <th>Mobile Number</th>
+		            <th>Edit</th>
+		            <th>Delete</th>
+		        </tr>
+		    </thead>
+		    <tbody *ngFor ="let coach of coaches">
+
+                <tr id="d1" *ngIf="coach">
+                    <th>{{ coach.name | uppercase }}</th>
+                    <td>{{ coach.email }}</td>
+                    <td>{{ coach.age }}</td>
+                    <td>{{ coach.coachtype }}</td>
+                    <td>{{ coach.mobile_number }}</td>
+		            <td><button type="button"  (click)="editbutton(coach.cid)" data-uid="1" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
+		            <td><button type="button"  (click)="delete_coach(coach.cid)" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
+		        </tr>
+
+
+
+
+
+                <tr id="d1" *ngIf="id === coach.cid">
+                    
+                    <td><input  type="text" value="{{ coach.name }}" class="form-control" #name name="fname" placeholder="Name"></td>
+                    <td><input  type="email" value="{{ coach.email }}" class="form-control" #email name="fname" placeholder="Email"></td>
+                    <td><input  type="text" value="{{ coach.age }}" class="form-control" #age name="fname" placeholder="Date Of Birth"></td>
+                    <td><input  type="text" value="{{ coach.coachtype }}" class="form-control" #coachtype name="fname" placeholder="Player Type"></td>
+                    <td><input  type="text" value="{{ coach.mobile_number }}" class="form-control" #mobile_number name="fname" placeholder="Mobile number"></td>
+                    <td><button type="button" (click)="edited_coach(coach.cid,name.value,email.value,age.value,coachtype.value,mobile_number.value)" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
+                    
+                </tr>
+
+		    </tbody>
+		</table>
+	</div>
+</div>
+
+

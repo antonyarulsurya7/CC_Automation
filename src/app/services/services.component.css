@@ -1,0 +1,6 @@
+.effect{
+	cursor: pointer;
+}
+.effect a:hover{
+	color: #00bcd4!important;
+}

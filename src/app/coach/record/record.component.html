@@ -1,0 +1,79 @@
+
+<div class="container">
+	<div class="row">
+		<table class="table table-hover table-responsive">
+		    <thead>
+		        <tr>
+		            <th>Name</th>
+		            <th>Email</th>
+		            <th>Age</th>
+                    <th>Player Type</th>
+                    <th>Matches Played</th>
+                    <th>Batsman Hand</th>
+		            
+                    <th>Total Score</th>
+                    <th>High Score</th>
+                    <th>50s/100s</th>
+                    <th>Bowling</th>
+                    <th>Wickets</th>
+                    <th>Best</th>
+                    <th>5wickets haul</th>
+		            <th>Edit</th>
+		        </tr>
+		    </thead>
+		    <tbody *ngFor ="let record of records">
+                <tr id="d1" *ngIf="record">
+                    <th>{{ record.name | uppercase }}</th>
+                    <td>{{ record.email }}</td>
+                    <td>{{ record.age }}</td>
+                    <td>{{ record.player_type }}</td>
+                    <td>{{ record.matches }}</td>
+                    <td>{{ record.batsman_hand | titlecase }}</td>
+                    
+                    <td>{{ record.total_score }}</td>
+                   
+		            <td>{{ record.high_score }}</td>
+                    
+                    <td>{{ record.fifties_hundrads }}</td>
+                    
+                    <td>{{ record.bowler_hand | titlecase }} &nbsp; Arm &nbsp;{{ record.type | titlecase }} Bowler</td>
+                    
+                    <td>{{ record.wickets }}</td>
+                   
+                    <td>{{ record.best }}</td>
+                    
+                    <td>{{ record.five_wicket_haul }}</td>
+                   
+		            <td><button type="button"  (click)="editbutton(record.id,record.player_type,record.age)" data-uid="1" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
+		        </tr>
+                <tr id="d1" *ngIf="id == record.id">
+                    <th >{{ record.name | uppercase }}</th>
+                    <td #email>{{ record.email }}</td>
+                    <td><input  type="text" value="{{ record.age }}" class="form-control" #age ></td>
+                    <td>{{ record.player_type }}</td>
+                    <td><input  type="text" value="{{ record.matches }}" class="form-control" #matches ></td>
+                   
+                    <td><input type="text" value="{{ record.batsman_hand | titlecase }}" class="form-control" #batsman_hand ></td>
+                    
+                    <td><input type="text" value="{{ record.total_score }}" class="form-control" #total_score ></td>
+                    
+		            <td><input type="text" value="{{ record.high_score }}" class="form-control" #high_score ></td>
+                   
+                    <td><input type="text" value="{{ record.fifties_hundrads }}" class="form-control" #fifties_hundrads ></td>
+                    
+                    <td><input type="text" value="{{ record.bowler_hand }}" class="form-control" #bowler_hand > &nbsp; Arm &nbsp;<input  type="text" value="{{ record.type }}" class="form-control" #type > Bowler</td>
+                    
+                    <td><input type="text" value="{{ record.wickets }}" class="form-control" #wickets ></td>
+                    
+                    <td><input type="text" value="{{ record.best }}" class="form-control" #best ></td>
+                    
+                    <td><input type="text" value="{{ record.five_wicket_haul }}" class="form-control" #five_wicket_haul ></td>
+                    
+		            <td><button type="button"  (click)="edited_button(age.value,record.player_type,matches.value,batsman_hand.value,total_score.value,high_score.value,fifties_hundrads.value,bowler_hand.value,type.value,wickets.value,best.value,five_wicket_haul.value,record.member_id)" data-uid="1" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
+                    
+		        
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>  

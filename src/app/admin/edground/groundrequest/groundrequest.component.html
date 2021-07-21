@@ -1,0 +1,39 @@
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th><abbr >Event</abbr></th>
+        <th>Type</th>
+        <th>Email</th>
+       <!-- <th><abbr>Event Name</abbr></th>-->
+        <th><abbr>Date</abbr></th>
+        <!--<th><abbr>Mobile Number</abbr></th>-->
+     <!--   <th><abbr title="Lost">L</abbr></th>
+        <th><abbr title="Goals for">GF</abbr></th>
+        <th><abbr title="Goals against">GA</abbr></th>
+        <th><abbr title="Goal difference">GD</abbr></th>
+        <th><abbr title="Points">Pts</abbr></th>  -->
+        <th>Accept</th>
+        <th>Decline</th>
+       
+      </tr>
+    </thead>
+    <tbody *ngFor="let request of requests" >
+        <tr>
+       <th hidden>{{ request.gid }}</th>
+          <th>{{ request.event }}</th>
+          <th>{{ request.type_of_booking }}</th>
+          <td>{{ request.email }}</td>
+          <td>{{ request.from_date | date: 'dd/MM/yyyy' }} -- {{request.to_date | date: 'dd/MM/yyyy'}}</td>
+         <!-- <td></td>
+          <td></td>  -->
+          <!--  <td>3</td>
+              <td>68</td>
+              <td>36</td>
+              <td>+32</td>
+               -->
+          <td class="plus" ><button (click)="ground_status('yes', request.gid, request.email)"  matTooltip="Accept" matTooltipPosition="above"><i class="fa fa-plus" ></i></button></td>
+          <td class="close" ><button (click)="ground_status('no', request.gid, request.email)" matTooltip="Decline" matTooltipPosition="above"><i class="fa fa-close" ></i></button></td>
+        </tr>
+      </tbody>
+</table>

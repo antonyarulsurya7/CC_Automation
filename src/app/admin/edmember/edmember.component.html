@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="column1">
+        <ul>
+            <li><button class="btn" (click)="assignComp('profile')">Members Profile</button></li>
+            <li><button class="btn" (click)="assignComp('list')">Members List</button></li>
+            <li><button class="btn" (click)="assignComp('request')">Members Request</button></li>
+            
+            <li><button class="btn" (click)="assignComp('editandremove')">Member Edit and remove</button></li>
+        </ul>
+    </div>
+    <div class="column2">
+       
+        
+          <div *ngIf="list">
+            <div> 
+              <ng-container *ngComponentOutlet="memberlist"></ng-container>
+            </div>
+          </div>
+          <div *ngIf="editandremove">
+            <div> 
+              <ng-container *ngComponentOutlet="membereditremove"></ng-container>
+            </div>
+          </div>
+          <div *ngIf="request">
+            <div> 
+              <ng-container *ngComponentOutlet="memberrequest"></ng-container>
+            </div>
+          </div>
+          <div *ngIf="profile">
+            <div> 
+              <ng-container *ngComponentOutlet="memberprofile"></ng-container>
+            </div>
+          </div>
+        
+    </div>
+</div>

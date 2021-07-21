@@ -1,0 +1,24 @@
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th><abbr >Event</abbr></th>
+        <th>Type</th>
+        <th>Email</th>
+
+        <th><abbr>Date</abbr></th>
+
+       
+      </tr>
+    </thead>
+    <tbody *ngFor="let response of responses" >
+        <tr>
+       <th hidden>{{ response.id }}</th>
+          <th>{{ response.event }}</th>
+          <th>{{ response.type_of_booking }}</th>
+          <td>{{ response.email }}</td>
+          <td>{{ response.from_date | date: 'dd/MM/yyyy' }} -- {{response.to_date | date: 'dd/MM/yyyy'}}</td>
+
+        </tr>
+      </tbody>
+</table>

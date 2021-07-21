@@ -1,0 +1,81 @@
+<div class="row">
+    <div class="column1" >
+        <div class="container">
+            
+                <table class="table table-hover table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Event Name</th>
+                            <th>Link</th>
+                            
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                   <tbody *ngFor ="let notice of notices">
+        
+                        <tr id="d1" *ngIf="notice">
+                            <th>{{ notice.event_name | uppercase }}</th>
+                            <td>{{ notice.link }}</td>
+                            
+                            <td><button class="edit" type="button"  (click)="editbutton(notice.nid)" data-uid="1" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
+                            <td><button  class="delete"type="button"  (click)="delete_notice(notice.nid)" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
+                        </tr>
+        
+        
+        
+        
+        
+                        <tr id="d1" *ngIf="id === notice.nid">
+                            
+                            <td><input  type="text" value="{{ notice.event_name }}" class="form-control" #event name="fname"></td>
+                            <td><input  type="text" value="{{ notice.link }}" class="form-control" #link name="fname" ></td>
+                            <td><button class="edit" type="button" (click)="edited_member(notice.nid, event.value, link.value)" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
+                            
+                        </tr>
+        
+                    </tbody> 
+                    
+
+                </table>
+                <button class="add" *ngIf="add" (click) = "displaybutton()">Add</button>
+                
+        
+        
+            </div>
+        </div>
+   <div class="column2">
+         <div *ngIf = display>
+              <p *ngIf = message >{{ message }}</p>
+            
+        <table class="table table-hover table-responsive">
+            <thead>
+                <tr>
+                    
+                    <th>Add Notice on notice board</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="d1">
+                    
+                    <th>Event Name</th>
+                    <td><input  type="text" class="form-control" #event name="event" placeholder="Event Name">
+                    <small *ngIf = "message" style="color: red">Please Enter the value</small></td>
+                </tr>
+                <tr id="d1">
+                        <th>Link</th>
+                        <td><input  type="text" class="form-control" #link name="link" placeholder="Link">
+                            <small *ngIf = "message" style="color: red">Please Enter the value</small></td>
+                    </tr>  
+            </tbody>
+            
+            </table>
+            <button class="add_display" (click) = "addbutton( event.value, link.value) ">Add</button>
+            <button class="add" (click)="close_button()">close</button>
+        </div>
+        </div> 
+   </div>
+
+
+   
+    

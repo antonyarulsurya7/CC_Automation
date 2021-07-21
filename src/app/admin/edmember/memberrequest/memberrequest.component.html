@@ -1,0 +1,39 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th><abbr>Name</abbr></th>
+      <th>Email</th>
+      <th><abbr>Player Type</abbr></th>
+      <th><abbr>Date Of Birth</abbr></th>
+      <th><abbr>Mobile Number</abbr></th>
+      <!--   <th><abbr title="Lost">L</abbr></th>
+        <th><abbr title="Goals for">GF</abbr></th>
+        <th><abbr title="Goals against">GA</abbr></th>
+        <th><abbr title="Goal difference">GD</abbr></th>
+        <th><abbr title="Points">Pts</abbr></th>  -->
+      <th>Address</th>
+      <th><abbr>Status</abbr></th>
+
+    </tr>
+  </thead>
+  <tbody *ngFor="let request of requests">
+    <tr>
+      <th hidden>{{ request.id }}</th>
+      <th>{{ request.name }}</th>
+      <td>{{ request.email }}</td>
+      <td>{{ request.player_type }}</td>
+      <td>{{ request.dob | date: 'dd - MM - yyyy' }}></td>
+      <td>{{ request.mobile_number }}</td>
+      <!--  <td>3</td>
+          <td>68</td>
+          <td>36</td>
+          <td>+32</td>
+          <td>81</td> -->
+      <td>{{ request.address}} </td>
+      <td class="edit"><button (click)="member_status('yes',request.id, request.email)"><i
+            class="fa fa-plus"></i></button>&nbsp;&nbsp;<button (click)="member_status('no',request.id,request.email)"><i
+            class="fa fa-close"></i></button></td>
+    </tr>
+  </tbody>
+
+</table>

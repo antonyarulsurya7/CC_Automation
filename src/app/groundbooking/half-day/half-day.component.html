@@ -1,0 +1,22 @@
+<div class="main">
+    <div class="ground_booking" id="search-section">
+        <form id="suggestion_form" name="gs" method="get" action="#">
+            <div class="searchText">
+
+                <h1>Half Day Booking</h1>
+                 <h3 style="color: white;">{{ message }}</h3>
+                <input type="email" name="email" value="{{ Email }}" class="email" #email
+                    placeholder="email" autocomplete="on" disabled>
+
+                <input type="text" name="fromevent" class="event" #event
+                    placeholder="Event" autocomplete="on">
+
+                <input type="Date" name="q" class="from" #from autocomplete="on">
+
+            </div>
+            <input type="submit" name="results" class="main-button" (click)="halfday('halfday', from.value, email.value, event.value )" value="Book Now">
+        </form>
+        <div class="advSearch_chkbox">
+        </div>
+    </div>
+</div>

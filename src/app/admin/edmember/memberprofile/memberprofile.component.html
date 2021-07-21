@@ -1,0 +1,46 @@
+<mat-form-field  style="color: black" class="search">
+  <input #event (keyup)="applyFilter(event.value)" matInput placeholder="Search">
+</mat-form-field>
+
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.name | uppercase}} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="dob">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Date Of Birth </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.dob | date: 'dd - MM - yyyy' }} </mat-cell>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="player_type">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Player Type </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.player_type}} </mat-cell>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="mobile_number">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Mobile Number </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.mobile_number}} </mat-cell>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="address">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Address </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.address}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</table>

@@ -1,0 +1,125 @@
+  <!-- Page Content -->
+    <!-- Heading Starts Here -->
+    <div class="page-heading header-text">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h1>Member / {{ member.name | titlecase }} </h1> 
+              <p><a (click)="display" >Member</a> / <a (click)="display" >&nbsp;Records</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Heading Ends Here -->
+
+      <div class="row" >
+        <div class="column1" *ngIf="display">
+          <table class="table table-hover table-dark">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th colspan="4">{{ member.name | titlecase }} &nbsp; Profile</th>
+               
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"></th>
+                <td colspan="2">Email</td>
+                
+                <td>{{ member.email }}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td colspan="2">Player Type</td>
+                
+                <td>{{ member.player_type | uppercase }}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td colspan="2">Date of Birth  </td>
+                <td>{{ member.dob | date: "dd-MM-yyy"}}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td colspan="2">Mobile Number </td>
+                <td>{{ member.mobile_number }}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td colspan="2">Address</td>
+                <td><address>{{ member.address }}</address></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <div class="column2" *ngIf="display">
+          <table class="table table-hover table-dark">
+            <thead>
+              <tr>
+                <th ></th>
+               <th scope="col"></th>
+                <th colspan="4">{{ member.name | titlecase }} &nbsp; Records</th>
+                 
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"></th>
+                <td colspan="2">Age</td>
+                
+                <td>{{ record.age }}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td colspan="2">Matches Played </td>
+                <td>{{ record.matches}}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td colspan="2">Batting</td>
+               
+                <td>{{ record.batsman_hand | titlecase  }} &nbsp; Arm Batsman</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td colspan="2">Total Runs </td>
+                <td>{{ record.total_score }}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td colspan="2">High Score</td>
+                <td>{{ record.high_score }}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td colspan="2">5o's/100's</td>
+                <td>{{ record.fifties_and_hundreds }}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td colspan="2">Bowling </td>
+                <td>{{ record.bowler_hands | titlecase }} &nbsp; Arm &nbsp; {{ record.type | titlecase }} &nbsp; Bowler</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td colspan="2">Wickets </td>
+                <td>{{ record.wickets }}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td colspan="2">Best </td>
+                <td>{{ record.best }}</td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td colspan="2">5 Wickets Haul </td>
+                <td>{{ record.five_wickets_haul }}</td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+      </div>

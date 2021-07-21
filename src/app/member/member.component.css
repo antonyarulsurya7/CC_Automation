@@ -1,0 +1,28 @@
+.container p a{
+  cursor: pointer;
+}
+
+.container p a:hover{
+    color: #00bcd4!important;
+}
+
+.column1 {
+    float: left;
+    width: 50%;
+    padding: 30px;
+      }
+
+      .column2 {
+        float: left;
+        width: 50%;
+        padding: 30px;
+          }
+
+          .row:after {
+    
+            display: table;
+            clear: both;
+          }
+
+
+ 

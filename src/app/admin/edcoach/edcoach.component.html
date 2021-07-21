@@ -1,0 +1,38 @@
+
+<div class="row">
+   
+    <div class="column1">
+        <ul>
+            
+            <li><button class="btn" (click)="assignComp('profile')">Coach Profile</button></li>
+            <li><button class="btn" (click)="assignComp('list')">Coachs List</button></li>
+            <li><button class="btn" (click)="assignComp('request')">Coachs Request</button></li>
+            <!--<li><button class="btn" (click)="assignComp('add')">Add Coach </button></li>-->
+            <li><button class="btn" (click)="assignComp('editandremove')">Coach Edit and remove</button></li>
+        </ul>
+    </div>
+    <div class="column2" >
+       
+        <div *ngIf="list">
+            <div> 
+              <ng-container *ngComponentOutlet="coachlist"></ng-container>
+            </div>
+          </div>
+          <div *ngIf="editandremove">
+            <div> 
+              <ng-container *ngComponentOutlet="coacheditremove"></ng-container>
+            </div>
+          </div>
+          <div *ngIf="request">
+            <div> 
+              <ng-container *ngComponentOutlet="coachrequest"></ng-container>
+            </div>
+          </div>
+          <div *ngIf="profile">
+            <div> 
+              <ng-container *ngComponentOutlet="coachprofile"></ng-container>
+            </div>
+          </div>
+       
+    </div>
+</div>

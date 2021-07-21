@@ -1,0 +1,38 @@
+.plus{
+    
+    padding-left: 30px;
+   
+
+}
+.close{
+    
+    padding-right: 350px;
+    
+}
+
+ 
+
+
+i{ 
+    
+    font-size: 20px;
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    -webkit-transition-property: text-shadow, transform;
+    transition-property: text-shadow, transform;
+    
+}
+.fa-plus:hover, .fa-plus:focus, .fa-plus:active{
+    color: green;
+    text-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+} 
+.fa-close:hover, .fa-close:focus, .fa-close:active{
+    color: red;
+    text-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+} 
+

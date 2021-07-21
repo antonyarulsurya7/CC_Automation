@@ -1,0 +1,29 @@
+  <!-- Page Content -->
+    <!-- Heading Starts Here -->
+    <div class="page-heading header-text">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h1>Coach</h1>
+              <p><a (click)="assignComponent('profile')" >Coach</a> /&nbsp; <a (click)="assignComponent('record')">Member Record</a> /&nbsp; <a (click)="assignComponent('team')" >Team Selection</a> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Heading Ends Here -->
+      <div *ngIf="profile">
+        <div>
+          <ng-container *ngComponentOutlet="coach_profile"></ng-container>
+        </div>
+      </div>
+      <div *ngIf="record">
+        <div>
+
+          <ng-container *ngComponentOutlet="member_record"></ng-container>
+        </div>
+      </div>
+      <div *ngIf="team">
+        <div>
+          <ng-container *ngComponentOutlet="team_selection"></ng-container>
+        </div>
+      </div>

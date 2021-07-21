@@ -1,0 +1,52 @@
+
+
+<div class="container">
+	<div class="row">
+		<table class="table table-hover table-responsive">
+		    <thead>
+		        <tr>
+		            <th>Name</th>
+		            <th>Email</th>
+		            <th>Date of Birth</th>
+                    <th>Player Type</th>
+		            <th>Mobile Number</th>
+                    <th>Address</th>
+		            <th>Edit</th>
+		            <th>Delete</th>
+		        </tr>
+		    </thead>
+		    <tbody *ngFor ="let member of members">
+
+                <tr id="d1" *ngIf="member">
+                    <th>{{ member.name | uppercase }}</th>
+                    <td>{{ member.email }}</td>
+                    <td>{{ member.dob | date: 'dd-MM-yyyy' }}</td>
+                    <td>{{ member.player_type }}</td>
+                    <td>{{ member.mobile_number }}</td>
+		            <td>{{ member.address }}</td>
+		            <td><button type="button"  (click)="editbutton(member.id)" data-uid="1" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
+		            <td><button type="button"  (click)="delete_member(member.id)" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
+		        </tr>
+
+
+
+
+
+                <tr id="d1" *ngIf="id === member.id">
+                    
+                    <td><input  type="text" value="{{ member.name }}" class="form-control" #name name="fname" placeholder="Name"></td>
+                    <td><input  type="email" value="{{ member.email }}" class="form-control" #email name="fname" placeholder="Email"></td>
+                    <td><input  type="text" value="{{ member.dob | date: 'yyyy-MM-dd' }}" class="form-control" #dob name="fname" placeholder="Date Of Birth"></td>
+                    <td><input  type="text" value="{{ member.player_type }}" class="form-control" #player_type name="fname" placeholder="Player Type"></td>
+                    <td><input  type="text" value="{{ member.mobile_number }}" class="form-control" #mobile_number name="fname" placeholder="Mobile number"></td>
+                    <td><input  type="text" value="{{ member.address }}" class="form-control" #address name="fname" placeholder="Address"></td>
+                    <td><button type="button" (click)="edited_member(member.id,name.value,email.value,dob.value,player_type.value,mobile_number.value,address.value)" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
+                    
+                </tr>
+
+		    </tbody>
+		</table>
+	</div>
+</div>
+
+
